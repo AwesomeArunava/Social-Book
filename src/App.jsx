@@ -4,9 +4,9 @@ import Header from "./component/Header";
 import Sidebar from "./component/Sidebar";
 import Footer from "./component/Footer";
 import Createpost from "./component/Createpost";
-import Post from "./component/Post";
+import PostList from "./component/PostList";
 function App() {
-  let [contentShow, setContentShow] = useState(false);
+  let [contentShow, setContentShow] = useState(true);
   const takeValueOfSideBar = (value) => {
     setContentShow(value);
   };
@@ -16,8 +16,10 @@ function App() {
         <Sidebar takeValueOfSideBar={takeValueOfSideBar}></Sidebar>
         <div className="content d-flex flex-column justify-content-between">
           <Header></Header>
-          {contentShow ? <Post /> : <Createpost />}
+
+          {contentShow ? <PostList /> : <Createpost />}
           {/* <Createpost></Createpost> */}
+
           <Footer></Footer>
         </div>
       </div>
