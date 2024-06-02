@@ -1,10 +1,10 @@
 import Post from "./Post";
 
-const PostList = () => {
-  let posts = [1, 2, 3, 4, 5];
+const PostList = ({ post }) => {
+  let posts = [1, 2];
   console.log(posts);
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center overflow-auto w-100">
+    <div className="d-flex flex-column align-items-center overflow-y-auto w-100 pt-2">
       {posts.map((items, index) => (
         <Post key={index} />
       ))}
